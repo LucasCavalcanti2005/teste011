@@ -1,0 +1,140 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Complexo e Responsivo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            background: #333;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        .nav-links li {
+            margin: 0 10px;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .hero {
+            text-align: center;
+            padding: 50px;
+            background: #f4f4f4;
+        }
+        .content {
+            padding: 20px;
+        }
+        .service-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .service-item {
+            background: #ddd;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        footer {
+            text-align: center;
+            background: #333;
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                background: #333;
+                top: 60px;
+                width: 100%;
+                left: 0;
+                padding: 10px 0;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .menu-toggle {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">MeuSite</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#services">Serviços</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+            <div class="menu-toggle">☰</div>
+        </nav>
+    </header>
+    
+    <section id="home" class="hero">
+        <h1>Bem-vindo ao MeuSite</h1>
+        <p>Seu site responsivo e moderno</p>
+        <button class="btn">Saiba Mais</button>
+    </section>
+    
+    <section id="about" class="content">
+        <h2>Sobre Nós</h2>
+        <p>Somos uma empresa dedicada a fornecer soluções incríveis para você.</p>
+    </section>
+    
+    <section id="services" class="content">
+        <h2>Serviços</h2>
+        <div class="service-grid">
+            <div class="service-item">Web Design</div>
+            <div class="service-item">Desenvolvimento</div>
+            <div class="service-item">SEO</div>
+        </div>
+    </section>
+    
+    <section id="contact" class="content">
+        <h2>Contato</h2>
+        <form>
+            <input type="text" placeholder="Seu Nome" required>
+            <input type="email" placeholder="Seu Email" required>
+            <textarea placeholder="Sua Mensagem" required></textarea>
+            <button type="submit" class="btn">Enviar</button>
+        </form>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 MeuSite. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const menuToggle = document.querySelector(".menu-toggle");
+            const navLinks = document.querySelector(".nav-links");
+            menuToggle.addEventListener("click", () => {
+                navLinks.classList.toggle("active");
+            });
+        });
+    </script>
+</body>
+</html>
